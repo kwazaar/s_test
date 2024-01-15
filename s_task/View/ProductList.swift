@@ -11,18 +11,29 @@ struct ProductList: View {
     
     @ObservedObject var viewModel = ProductListViewModel()
     
+    private var columns: [GridItem] = [ GridItem (.flexible(minimum: 0, maximum: UIScreen.main.bounds.height / 2)), GridItem (.flexible(minimum: 0, maximum: UIScreen.main.bounds.height / 2))]
+    
     var body: some View {
         VStack {
-            if let model = viewModel.productListModel {
-                Text(model.name)
-            }
+            HStack {
                 TextField("Search", text: $viewModel.text)
                 Button {
-                    viewModel.loadData()
+                    viewModel.loadSearchList()
                 } label: {
-                    Text("Search")
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(.black)
                 }
-
+            }
+            Spacer()
+            if !viewModel.productListModel.isEmpty {
+                ScrollView(.vertical, showsIndicators: false) {
+                    LazyVGrid(columns: columns, spacing: 20) {
+                        ForEach(viewModel.titleImage) { image in
+                                ProductCell(image: image.image!, title: "Описание продукта")
+                        }
+                    }
+                }
+            }
         }
         .padding()
     }

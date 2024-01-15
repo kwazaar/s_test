@@ -16,26 +16,53 @@ class NetworkService {
     private var server = "http://shans.d2.i-partner.ru/api/ppp/"
     
     enum APIURL: String {
-        case item = "item"
-        case search = "index"
+        case item = "item/?id="
+        case search = "index/?search="
     }
     
-    func fetchData<T: Decodable>(from url: APIURL, id: String, responseType: T.Type, completion: @escaping (Result<T, Error>) -> ()) {
-        print("1")
-        if let url = URL(string: "\(server)\(url)/?id=\(id)") {
+    func fetchData<T: Codable>(url: String, text: String, completion: @escaping (Result<T, Error>) -> Void) {
+        if let url = URL(string: "\(server)\(url)\(text)") {
             print(url)
-            URLSession.shared.dataTask(with: url) { (data, _, error) in
-                let data = try! JSONDecoder().decode(T.self, from: data!)
-                print("2")
-                DispatchQueue.main.async {
-                    completion(.success(data))
-                }
+            URLSession.shared.dataTask(with: url) { data, response, error in
                 if let error = error {
-                    print(error.localizedDescription)
+                    completion(.failure(error))
+                    return
+                }
+                
+                guard let data = data else {
+                    completion(.failure(NSError(domain: "InvalidData", code: 0, userInfo: nil)))
+                    return
+                }
+                print(data.description)
+                do {
+                    
+                    let decodedData = try JSONDecoder().decode(T.self, from: data)
+                    completion(.success(decodedData))
+                } catch {
+                    print("Ошибка декодирования")
+                    completion(.failure(error))
                 }
             }.resume()
-            print("3")
         }
     }
+    
+
+    
+//    func fetchData(search: String, completion: @escaping (Result<DrugModel, Error>) -> ()) {
+//       if let url = URL(string: "http://shans.d2.i-partner.ru/api/ppp/index/?search=\(search)"){
+//        URLSession.shared.dataTask(with: url) { data, _ , error in
+//            if let data = data {
+//                print(data)
+//                let fetchData = try? JSONDecoder().decode(DrugModel.self, from: data)
+//                DispatchQueue.main.async() {
+//                    completion(.success(fetchData!))
+//                }
+//            }
+//            if let error = error {
+//                print(error.localizedDescription)
+//            }
+//        }.resume()
+//    }
+//    }
     
 }

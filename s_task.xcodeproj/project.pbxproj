@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED026D342B55BBDE003BDCCF /* ImageCachingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED026D332B55BBDE003BDCCF /* ImageCachingService.swift */; };
+		ED026D382B55C1FB003BDCCF /* ImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED026D372B55C1FB003BDCCF /* ImagesModel.swift */; };
+		ED026D3A2B55C847003BDCCF /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED026D392B55C847003BDCCF /* ProductCell.swift */; };
 		ED35CA572B50550500481EAC /* s_taskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED35CA562B50550500481EAC /* s_taskApp.swift */; };
 		ED35CA592B50550500481EAC /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED35CA582B50550500481EAC /* ProductList.swift */; };
 		ED35CA5B2B50550600481EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED35CA5A2B50550600481EAC /* Assets.xcassets */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED026D332B55BBDE003BDCCF /* ImageCachingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCachingService.swift; sourceTree = "<group>"; };
+		ED026D372B55C1FB003BDCCF /* ImagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesModel.swift; sourceTree = "<group>"; };
+		ED026D392B55C847003BDCCF /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		ED35CA532B50550500481EAC /* s_task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = s_task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED35CA562B50550500481EAC /* s_taskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = s_taskApp.swift; sourceTree = "<group>"; };
 		ED35CA582B50550500481EAC /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
@@ -82,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				ED35CA652B50554900481EAC /* NetworkService.swift */,
+				ED026D332B55BBDE003BDCCF /* ImageCachingService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -90,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				ED4194982B51B7AC009D0E58 /* DrugModel.swift */,
+				ED026D372B55C1FB003BDCCF /* ImagesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -98,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				ED35CA582B50550500481EAC /* ProductList.swift */,
+				ED026D392B55C847003BDCCF /* ProductCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -183,7 +192,10 @@
 				ED4194992B51B7AC009D0E58 /* DrugModel.swift in Sources */,
 				ED4194A02B51D49B009D0E58 /* ProductListViewModel.swift in Sources */,
 				ED35CA592B50550500481EAC /* ProductList.swift in Sources */,
+				ED026D382B55C1FB003BDCCF /* ImagesModel.swift in Sources */,
 				ED35CA662B50554900481EAC /* NetworkService.swift in Sources */,
+				ED026D3A2B55C847003BDCCF /* ProductCell.swift in Sources */,
+				ED026D342B55BBDE003BDCCF /* ImageCachingService.swift in Sources */,
 				ED35CA572B50550500481EAC /* s_taskApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

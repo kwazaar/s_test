@@ -6,25 +6,50 @@
 //
 
 import Foundation
+import Combine
+
 
 
 class ProductListViewModel: ObservableObject {
     
-    @Published var productListModel: DrugModel?
+    @Published var productListModel: [DrugModel] = []
     @Published var id : String = ""
     @Published var text: String = ""
     
-    func loadData() {
-        
-        NetworkService.shared.fetchData(from: .item, id: text, responseType: DrugModel.self) { result in
+//    @Published var model: DrugModel?
+    @Published var titleImage: [ImageModel] = []
+    @Published var title: String = ""
+    @Published var urlAddress: String = ""
+  
+    
+    func loadSearchList() {
+        NetworkService.shared.fetchData(url: NetworkService.APIURL.search.rawValue, text: text) { (result: Result<[DrugModel], Error>) in
             switch result {
             case .success(let data):
-                self.productListModel = data
+                DispatchQueue.main.async {
+                    self.productListModel = data
+                    
+                    for product in self.productListModel {
+                        let imageCachingService = ImageCachingService()
+                        imageCachingService.loadImage(address: product.image) { image in
+                            if let image = image {
+                                self.titleImage.append(ImageModel(id: product.id,image: image))
+                            }
+                        }
+                    }
+                }
             case .failure(let error):
-                print(error.localizedDescription)
+                print("Error: \(error.localizedDescription)")
             }
-            
         }
     }
     
+//    func loadImage(id: Int, address: String) {
+//        let imageCachingService = ImageCachingService()
+//        imageCachingService.loadImage(address: urlAddress) { image in
+//            if let image = image {
+//                self.titleImage.append(ImageModel(id: id,image: image))
+//            }
+//        }
+//    }
 }
