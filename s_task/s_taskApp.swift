@@ -11,7 +11,10 @@ import SwiftUI
 struct s_taskApp: App {
     var body: some Scene {
         WindowGroup {
-            ProductList()
+            NavigationStack {
+                ProductList()
+            }
+            .toolbarBackground(.visible, for: .navigationBar)
         }
     }
 }

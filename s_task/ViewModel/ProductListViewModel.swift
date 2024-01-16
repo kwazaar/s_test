@@ -33,10 +33,11 @@ class ProductListViewModel: ObservableObject {
                         let imageCachingService = ImageCachingService()
                         imageCachingService.loadImage(address: product.image) { image in
                             if let image = image {
-                                self.titleImage.append(ImageModel(id: product.id,image: image))
+                                self.titleImage.append(ImageModel(id: product.id, image: image, title: product.name, description: product.description))
                             }
                         }
                     }
+                    self.text = ""
                 }
             case .failure(let error):
                 print("Error: \(error.localizedDescription)")

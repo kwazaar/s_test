@@ -9,7 +9,11 @@ import Foundation
 import SwiftUI
 
 
-struct ImageModel: Identifiable {
+struct ImageModel: Identifiable, Hashable {
+    
     var id: Int
     var image: UIImage?
+    var title: String
+    var description: String
+    
 }
