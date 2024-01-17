@@ -42,7 +42,7 @@ struct ProductList: View {
                         ForEach(viewModel.titleImage, id: \.self) { image in
                             
                             NavigationLink {
-                                ProductDetail(model: image)
+                                ProductDetail(images: image)
                             } label: {
                                 ProductCell(image: image.image!, title: image.title, description: image.description)
                                 .padding(.vertical, 5)

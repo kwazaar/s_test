@@ -18,6 +18,7 @@
 		ED4194992B51B7AC009D0E58 /* DrugModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4194982B51B7AC009D0E58 /* DrugModel.swift */; };
 		ED4194A02B51D49B009D0E58 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41949F2B51D49B009D0E58 /* ProductListViewModel.swift */; };
 		EDBA1C012B570614004BC27F /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA1C002B570614004BC27F /* ProductDetail.swift */; };
+		FD55B6A72B5851A90030B4CD /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD55B6A62B5851A90030B4CD /* ProductDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		ED41949C2B51D3B9009D0E58 /* s-task-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "s-task-Info.plist"; sourceTree = SOURCE_ROOT; };
 		ED41949F2B51D49B009D0E58 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
 		EDBA1C002B570614004BC27F /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
+		FD55B6A62B5851A90030B4CD /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				ED41949F2B51D49B009D0E58 /* ProductListViewModel.swift */,
+				FD55B6A62B5851A90030B4CD /* ProductDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				ED4194992B51B7AC009D0E58 /* DrugModel.swift in Sources */,
 				ED4194A02B51D49B009D0E58 /* ProductListViewModel.swift in Sources */,
 				EDBA1C012B570614004BC27F /* ProductDetail.swift in Sources */,
+				FD55B6A72B5851A90030B4CD /* ProductDetailViewModel.swift in Sources */,
 				ED35CA592B50550500481EAC /* ProductList.swift in Sources */,
 				ED026D382B55C1FB003BDCCF /* ImagesModel.swift in Sources */,
 				ED35CA662B50554900481EAC /* NetworkService.swift in Sources */,
