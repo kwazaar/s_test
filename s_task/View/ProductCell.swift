@@ -21,14 +21,12 @@ struct ProductCell: View {
     
     var body: some View {
         GeometryReader { geometry in
-            VStack {
-                VStack(alignment: .center) {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: geometry.size.height / 2.5, alignment: .center)
-                }
-                .padding(12)
+            VStack(alignment: .center) {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: geometry.size.height / 2.5, alignment: .center)
+                    .padding(12)
                 VStack(alignment: .leading) {
                     Text(title)
                         .font(.system(size: 13, weight: .semibold))
