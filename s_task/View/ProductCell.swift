@@ -20,22 +20,28 @@ struct ProductCell: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Image(uiImage: image)
-                .resizable()
-                .scaledToFit()
-                .frame(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.height / 5, alignment: .center)
-                .padding(.vertical, 5)
-            VStack() {
-                Text(title)
-                    .font(.system(size: 13))
-                    .lineLimit(2)
-                    .foregroundColor(Color.black)
-                    .padding(.bottom, 5)
-                Text(description)
-                    .font(.system(size: 12))
-                    .foregroundColor(Color.gray)
-                    .padding(.bottom, 5)
+        GeometryReader { geometry in
+            VStack {
+                VStack(alignment: .center) {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: geometry.size.height / 2, alignment: .center)
+                }
+                .padding(12)
+                VStack(alignment: .leading) {
+                    Text(title)
+                        .font(.system(size: 13, weight: .bold))
+                        .lineLimit(2)
+                        .foregroundColor(Color.black)
+                        .padding(.bottom, 5)
+                    Text(description)
+                        .font(.system(size: 12))
+                        .foregroundColor(Color.gray)
+                        .padding(.bottom, 5)
+                }
+                .lineSpacing(3)
+                .multilineTextAlignment(.leading)
             }
         }
         .padding(.horizontal)

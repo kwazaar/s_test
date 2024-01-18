@@ -46,7 +46,7 @@ struct ProductList: View {
                             } label: {
                                 ProductCell(image: image.image!, title: image.title, description: image.description)
                                 .padding(.vertical, 5)
-                                .shadow(radius: 3)
+                                .shadow(radius: 2)
                             }
 
                             
