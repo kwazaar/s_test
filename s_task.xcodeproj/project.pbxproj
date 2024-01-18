@@ -28,11 +28,11 @@
 		ED35CA532B50550500481EAC /* s_task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = s_task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED35CA562B50550500481EAC /* s_taskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = s_taskApp.swift; sourceTree = "<group>"; };
 		ED35CA582B50550500481EAC /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
-		ED35CA5A2B50550600481EAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED35CA5A2B50550600481EAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		ED35CA5D2B50550600481EAC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ED35CA652B50554900481EAC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		ED4194982B51B7AC009D0E58 /* DrugModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugModel.swift; sourceTree = "<group>"; };
-		ED41949C2B51D3B9009D0E58 /* s-task-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "s-task-Info.plist"; sourceTree = SOURCE_ROOT; };
+		ED41949C2B51D3B9009D0E58 /* s-task-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "s-task-Info.plist"; sourceTree = SOURCE_ROOT; };
 		ED41949F2B51D49B009D0E58 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
 		EDBA1C002B570614004BC27F /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
 		FD55B6A62B5851A90030B4CD /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
@@ -68,13 +68,13 @@
 		ED35CA552B50550500481EAC /* s_task */ = {
 			isa = PBXGroup;
 			children = (
-				ED41949E2B51D465009D0E58 /* ViewModel */,
-				ED41949D2B51D45E009D0E58 /* View */,
-				ED41949C2B51D3B9009D0E58 /* s-task-Info.plist */,
+				ED35CA562B50550500481EAC /* s_taskApp.swift */,
 				ED4194972B51B797009D0E58 /* Model */,
 				ED35CA642B50552500481EAC /* Service */,
-				ED35CA562B50550500481EAC /* s_taskApp.swift */,
+				ED41949E2B51D465009D0E58 /* ViewModel */,
+				ED41949D2B51D45E009D0E58 /* View */,
 				ED35CA5A2B50550600481EAC /* Assets.xcassets */,
+				ED41949C2B51D3B9009D0E58 /* s-task-Info.plist */,
 				ED35CA5C2B50550600481EAC /* Preview Content */,
 			);
 			path = s_task;

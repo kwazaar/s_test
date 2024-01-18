@@ -12,7 +12,7 @@ struct ProductCell: View {
     var image: UIImage
     var title: String
     var description: String
-
+    
     init(image: UIImage, title: String, description: String) {
         self.image = image
         self.title = title
@@ -26,13 +26,12 @@ struct ProductCell: View {
                     Image(uiImage: image)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: geometry.size.height / 2, alignment: .center)
+                        .frame(height: geometry.size.height / 2.5, alignment: .center)
                 }
                 .padding(12)
                 VStack(alignment: .leading) {
                     Text(title)
-                        .font(.system(size: 13, weight: .bold))
-                        .lineLimit(2)
+                        .font(.system(size: 13, weight: .semibold))
                         .foregroundColor(Color.black)
                         .padding(.bottom, 5)
                     Text(description)
@@ -45,7 +44,7 @@ struct ProductCell: View {
             }
         }
         .padding(.horizontal)
-        .frame(width: UIScreen.main.bounds.width / 2.3, height: UIScreen.main.bounds.height / 3, alignment: .center)
+        .frame(width: UIScreen.main.bounds.width / 2.2, height: UIScreen.main.bounds.height / 3, alignment: .center)
         .background(Color.white)
         .cornerRadius(13)
     }

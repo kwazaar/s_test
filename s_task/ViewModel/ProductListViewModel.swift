@@ -16,11 +16,10 @@ class ProductListViewModel: ObservableObject {
     @Published var id : String = ""
     @Published var text: String = ""
     
-//    @Published var model: DrugModel?
     @Published var titleImage: [ImageModel] = []
     @Published var title: String = ""
     @Published var urlAddress: String = ""
-  
+    
     
     func loadSearchList() {
         NetworkService.shared.fetchData(url: NetworkService.APIURL.search.rawValue, text: text) { (result: Result<[DrugModel], Error>) in
@@ -28,7 +27,7 @@ class ProductListViewModel: ObservableObject {
             case .success(let data):
                 DispatchQueue.main.async {
                     self.productListModel = data
-                    
+                    self.titleImage = []
                     for product in self.productListModel {
                         let imageCachingService = ImageCachingService()
                         imageCachingService.loadImage(address: product.image) { image in
@@ -44,13 +43,4 @@ class ProductListViewModel: ObservableObject {
             }
         }
     }
-    
-//    func loadImage(id: Int, address: String) {
-//        let imageCachingService = ImageCachingService()
-//        imageCachingService.loadImage(address: urlAddress) { image in
-//            if let image = image {
-//                self.titleImage.append(ImageModel(id: id,image: image))
-//            }
-//        }
-//    }
 }

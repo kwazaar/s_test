@@ -14,7 +14,6 @@ struct s_taskApp: App {
             NavigationStack {
                 ProductList()
             }
-            .toolbarBackground(.visible, for: .navigationBar)
         }
     }
 }

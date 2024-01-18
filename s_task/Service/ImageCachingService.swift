@@ -10,7 +10,6 @@ import SwiftUI
 
 
 class ImageCachingService: ObservableObject {
-//    static let shared = ImageCachingService()
     
     @Published var image : UIImage?
     private var server = "http://shans.d2.i-partner.ru/"

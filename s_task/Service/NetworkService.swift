@@ -33,7 +33,6 @@ class NetworkService {
                     completion(.failure(NSError(domain: "InvalidData", code: 0, userInfo: nil)))
                     return
                 }
-                print(data.description)
                 do {
                     
                     let decodedData = try JSONDecoder().decode(T.self, from: data)
@@ -45,24 +44,4 @@ class NetworkService {
             }.resume()
         }
     }
-    
-
-    
-//    func fetchData(search: String, completion: @escaping (Result<DrugModel, Error>) -> ()) {
-//       if let url = URL(string: "http://shans.d2.i-partner.ru/api/ppp/index/?search=\(search)"){
-//        URLSession.shared.dataTask(with: url) { data, _ , error in
-//            if let data = data {
-//                print(data)
-//                let fetchData = try? JSONDecoder().decode(DrugModel.self, from: data)
-//                DispatchQueue.main.async() {
-//                    completion(.success(fetchData!))
-//                }
-//            }
-//            if let error = error {
-//                print(error.localizedDescription)
-//            }
-//        }.resume()
-//    }
-//    }
-    
 }
